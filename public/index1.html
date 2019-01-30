@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>Hello, world!</h1>
+    <button class="attack">Attack</button>
+    <div class="result"></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      	 var hero = {
+        'name': 'Dan The Man',
+        'type': 'Human',
+        'lvl': 1,
+        'hp': 45,
+        'atk': 12,
+        'def': 10,
+	'crit': 15,
+	'crdmg': 100
+      };
+      var enemy = {
+        'name': 'Slime',
+        'type': 'Slime',
+        'lvl': 1,
+        'hp': 65,
+        'atk': 7,
+        'def': 9,
+	'crit': 15,
+	'crdmg': 100
+      };
+
+     function attack(attacker,target,attackUsed){
+	
+	var isCrit = false,
+		pos = 2,
+              neg = 2,
+	    dmgSwing = (Math.floor(Math.random() * (pos + neg)) - neg);
+	if((Math.floor(Math.random() * 100) + 1)<=attacker.crit){
+
+isCrit = true;
+
+}
+console.log('Crit:' + isCrit);
+
+        if(target.def >= attacker.atk) {
+          var damage = -(Math.floor(Math.random() * 2) + 1); 
+        } else {
+          var damage = target.def - attacker.atk; 
+        }
+	damage = damage + dmgSwing;
+
+	if (isCrit) {
+	    damage = (damage * (attacker.crdmg/100)) + damage;
+	}
+
+        var targetHP = target.hp - -(damage);
+
+	
+        
+	target.hp = targetHP;
+       
+	 //If target hp is less than or equal to 0 then its dead otherwise show the damage dealt
+
+        // if(targetHP <= 0){
+        //   console.log(attacker.name + ' has slain the '+ target.name);
+        // } else {
+        if(targetHP > 0){
+          console.log(attacker.name +' has dealt '+ damage + ' to ' + target.name);
+        }
+      }
+
+      var heroTurn = true;
+      function battle(hero,enemy) {
+        var winner = '';
+        if(enemy.hp > 0 && hero.hp > 0){
+          if(heroTurn == true) {
+            attack(hero,enemy);
+            heroTurn = false;
+          } else {
+            attack(enemy,hero);
+            heroTurn = true;
+          }
+          battle(hero,enemy);
+        } else {
+          if(hero.hp > 0) {
+            winner = hero.name + ' has won the battle!';
+            console.log(hero.name + ' has won the battle!');
+          } else {
+            winner = enemy.name + ' has won the battle. :-(';
+            console.log(enemy.name + ' has won the battle. :-(');
+          }
+
+          $('.result').text( winner);
+        }
+      }
+
+      $('.attack').click(function(){
+        battle(hero,enemy);
+
+      })
+
+    </script>
+
+    <!--        'sp': {
+          'atkRq': 3,
+          'atkPwr': 150%
+        },
+-->
+  </body>
+</html>
