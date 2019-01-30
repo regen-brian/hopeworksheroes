@@ -1,2 +1,2 @@
-# Hopeworks Heros
+# Hopeworks Heroes
 Turn Based RPG
