@@ -1,7 +1,7 @@
 # Hopeworks Heroes
 Turn Based RPG
 
-###Monster Attributes
+### Monster Attributes
 * Atk: Attack
 * Def: Defense
 * HP: Health Points
