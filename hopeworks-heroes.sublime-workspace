@@ -569,10 +569,13 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/bwalsh/Documents/web projects/hopeworksheroes"
+		"/Users/bwalsh/Documents/web projects/hopeworksheroes",
+		"/Users/bwalsh/Documents/web projects/hopeworksheroes/public"
 	],
 	"file_history":
 	[
+		"/Users/bwalsh/Documents/web projects/hopeworksheroes/src/scss/_bootstrap-customizations.scss",
+		"/Users/bwalsh/Documents/web projects/hopeworksheroes/src/scss/styles.scss",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/asset/css/accordion.css",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/pages/messagesCenter.js",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/init.js",
@@ -698,9 +701,7 @@
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen2/css/main.css",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen2/driverAlertsGen2.html",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/pages/bluetoothCompatibility.js",
-		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/resetPin.html",
-		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/attWifiHotspot.html",
-		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/pages/changePin.js"
+		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/resetPin.html"
 	],
 	"find":
 	{
