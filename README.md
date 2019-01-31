@@ -2,12 +2,28 @@
 Turn Based RPG
 
 ### Monster Attributes
-* Atk: Attack
-* Def: Defense
-* HP: Health Points
-* LVL: Level
+#### Heroes
+* name: Hero Name
+* type: Description of hero
+* lvl: Current level of hero
+* xp: Current total experience points of hero
+* hp: Health Points
+* atk: Attack
+* def: Defense
 * crit: Critical Attack Rate
 * crdmg: Critical Attack Multiplier
+
+#### Enemies
+* name: Enemy Name
+* type: Description of enemy
+* xpType: A flag to determine the multiplier for experience points given if defeated. Common = 0, Rare = +30%
+* lvl: Current level of enemy
+* hp: Health Points
+* atk: Attack
+* def: Defense
+* crit: Critical Attack Rate
+* crdmg: Critical Attack Multiplier
+
 
 ### Attack Formula
 * Defense - Attack = Damage

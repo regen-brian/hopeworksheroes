@@ -21,89 +21,75 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script type="text/javascript">
-         var hero = {
+      var hero = {
         'name': 'Dan The Man',
         'type': 'Human',
         'lvl': 1,
+        'xp': 0,
         'hp': 45,
         'atk': 12,
         'def': 10,
-  'crit': 15,
-  'crdmg': 100,
-  'xp': 0
+        'crit': 15,
+        'crdmg': 100
       };
       var enemy = {
         'name': 'Slime',
         'type': 'Slime',
-  'xpType': 'Common', 
+        'xpType': 'Common', 
         'lvl': 3,
         'hp': 65,
         'atk': 7,
         'def': 9,
-  'crit': 15,
-  'crdmg': 100
+        'crit': 15,
+        'crdmg': 100
       };
 
-  function calcXp (enemy){
-var baseXp = 100;
-var totalXp = baseXp;
-// if enemy lvl greater than lvl 1 than take base xp and maltiply it by 10% per lvl 
-if (enemy.lvl > 1) { 
-  for ( var i = 1; i < enemy.lvl; i++) {
-    totalXp = Math.floor(totalXp * .1) + totalXp;
-  }
+      function calcXp (enemy){
+        var baseXp = 100;
+        var totalXp = baseXp;
+        // if enemy lvl greater than lvl 1 than take base xp and maltiply it by 10% per lvl 
+        if (enemy.lvl > 1) { 
+          for ( var i = 1; i < enemy.lvl; i++) {
+            totalXp = Math.floor(totalXp * .1) + totalXp;
+          }
 
- }
- 
-return totalXp;
+        }
+        return totalXp;
+      }
 
-  }
-  function updateHeroXp(hero,xpGained) {
-    hero.xp = hero.xp + xpGained;
-  }
+      function updateHeroXp(hero,xpGained) {
+        hero.xp = hero.xp + xpGained;
+      }
 
-     function attack(attacker,target,attackUsed){
-  
-  var isCrit = false,
-    pos = 2,
-              neg = 2;
-  if((Math.floor(Math.random() * 100) + 1)<=attacker.crit){
+      function attack(attacker,target,attackUsed){
+        var isCrit = false,
+        pos = 2,
+        neg = 2;
 
-isCrit = true;
-
-}
-console.log('Crit:' + isCrit);
+        if((Math.floor(Math.random() * 100) + 1)<=attacker.crit){
+          isCrit = true;
+        }
+        console.log('Crit:' + isCrit);
 
         if(target.def >= attacker.atk) {
-//-(Math.floor(Math.random() * 2) + 1) + Math.floor(Math.random() * (pos + neg)) - neg
           var damage = -(Math.floor(Math.random() * 2) + 1); 
         
-if (isCrit) {
-damage = (damage * (attacker.crdmg/100)) + damage;
-}
-
-
-
+          if (isCrit) {
+            damage = (damage * (attacker.crdmg/100)) + damage;
+          }
           
         } else {
           var damage = target.def - attacker.atk; 
           
-if (isCrit) {
-damage = (damage * (attacker.crdmg/100)) + damage;
-}
+          if (isCrit) {
+            damage = (damage * (attacker.crdmg/100)) + damage;
+          }
 
         }
-        var targetHP = target.hp - -(damage);
+        var targetHP = target.hp + damage;
 
-  
-        
-  target.hp = targetHP;
-       
-   //If target hp is less than or equal to 0 then its dead otherwise show the damage dealt
+        target.hp = targetHP;
 
-        // if(targetHP <= 0){
-        //   console.log(attacker.name + ' has slain the '+ target.name);
-        // } else {
         if(targetHP > 0){
           console.log(attacker.name +' has dealt '+ damage + ' to ' + target.name);
         }
@@ -141,7 +127,6 @@ damage = (damage * (attacker.crdmg/100)) + damage;
         battle(hero,enemy);
 
       })
-
     </script>
 
   </body>
