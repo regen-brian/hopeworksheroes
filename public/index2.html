@@ -44,6 +44,32 @@
         'crdmg': 100
       };
 
+      var enemies = ['Pikachu','Squirtle','Charmander','Piplop','Slowpoke'];
+
+      function randomEnemy() {
+        var enemy = {
+          'name': 'Slime',
+          'type': 'Slime',
+          'xpType': 'Common', 
+          'lvl': 3,
+          'hp': 65,
+          'atk': 7,
+          'def': 9,
+          'crit': 15,
+          'crdmg': 100
+        };
+
+        enemy.name = enemies[randomNumber(enemies.length)];
+        enemy.lvl = randomNumber(10,1);
+
+        return enemy;
+      }
+
+      function randomNumber(maxNum,minNum) {
+        var number = Math.floor(Math.random() * maxNum) + (minNum ? minNum : 0);
+        return number;
+      }
+
       function calcXp (enemy){
         var baseXp = 100;
         var totalXp = baseXp;
@@ -66,13 +92,13 @@
         pos = 2,
         neg = 2;
 
-        if((Math.floor(Math.random() * 100) + 1)<=attacker.crit){
+        if(randomNumber(100,1)<=attacker.crit){
           isCrit = true;
         }
         console.log('Crit:' + isCrit);
 
         if(target.def >= attacker.atk) {
-          var damage = -(Math.floor(Math.random() * 2) + 1); 
+          var damage = -(randomNumber(2,1)); 
         
           if (isCrit) {
             damage = (damage * (attacker.crdmg/100)) + damage;

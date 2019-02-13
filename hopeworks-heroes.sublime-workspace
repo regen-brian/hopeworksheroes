@@ -519,6 +519,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "public/index2.html",
+			"settings":
+			{
+				"buffer_size": 4077,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 1203,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -574,6 +592,8 @@
 	],
 	"file_history":
 	[
+		"/Users/bwalsh/Documents/web projects/hopeworksheroes/README.md",
+		"/Users/bwalsh/Desktop/index2.html",
 		"/Users/bwalsh/Documents/web projects/hopeworksheroes/src/scss/_bootstrap-customizations.scss",
 		"/Users/bwalsh/Documents/web projects/hopeworksheroes/src/scss/styles.scss",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/asset/css/accordion.css",
@@ -699,13 +719,11 @@
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/asset/css/icon-button.css",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen1/css/main.css",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen2/css/main.css",
-		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen2/driverAlertsGen2.html",
-		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/pages/bluetoothCompatibility.js",
-		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/resetPin.html"
+		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen2/driverAlertsGen2.html"
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 32.0
 	},
 	"find_in_files":
 	{
@@ -719,6 +737,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"*",
+			","
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -736,8 +756,67 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "public/index2.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1529,
+								1342
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 543.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1203,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								620,
+								620
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
