@@ -44,23 +44,52 @@
         'crdmg': 100
       };
 
-      var enemies = ['Pikachu','Squirtle','Charmander','Piplop','Slowpoke'];
+      var commonMonsters = ['Hellhound','Bear','Worthog','Slime'],
+          rareMonsters = ['Wizard','Centar'],
+          legendaryMonsters = ['Titan'];
 
-      function randomEnemy() {
+      function randomEnemy(playerLevel) {
         var enemy = {
-          'name': 'Slime',
-          'type': 'Slime',
-          'xpType': 'Common', 
-          'lvl': 3,
-          'hp': 65,
-          'atk': 7,
-          'def': 9,
-          'crit': 15,
-          'crdmg': 100
-        };
+              'name': 'Slime',
+              'type': 'Defense',
+              'xpType': 'Common', 
+              'lvl': 3,
+              'hp': 65,
+              'atk': 7,
+              'def': 9,
+              'crit': 15,
+              'crdmg': 100
+            },
+            lvlDelta = randomNumber((playerLevel+2),((playerLevel-2)<0 ? 1:(playerLevel-2))),
+            hpDelta = 1.02+(playerLevel/10),
+            atkDelta = 4*(playerLevel/10),
+            defDelta = 4*(playerLevel/10),
+            monsterType = randomNumber(1000,1);
 
-        enemy.name = enemies[randomNumber(enemies.length)];
-        enemy.lvl = randomNumber(10,1);
+        if(monsterType < 5) {
+          enemy.name = legendaryMonsters[randomNumber(legendaryMonsters.length)];
+          enemy.lvl = 10;
+          enemy.hp = Math.floor(randomNumber(enemy.hp*10,enemy.hp*5));
+          enemy.atk = Math.floor(randomNumber(enemy.atk*8,enemy.atk*4));
+          enemy.def = Math.floor(randomNumber(enemy.def*8,enemy.def*4));
+          enemy.crdmg = 200;
+          enemy.xpType = 'God';
+        } else if(monsterType >= 5 && monsterType < 200) {
+          enemy.name = rareMonsters[randomNumber(rareMonsters.length)];
+          enemy.lvl = randomNumber(lvlDelta,playerLevel);
+          enemy.hp = Math.floor(randomNumber(enemy.hp*hpDelta,enemy.hp/hpDelta));
+          enemy.atk = Math.floor(randomNumber(enemy.atk*atkDelta,enemy.atk*(atkDelta/3)));
+          enemy.def = Math.floor(randomNumber(enemy.def*defDelta,enemy.def*(defDelta/3)));
+          enemy.xpType = 'Rare';
+        } else {
+          enemy.name = commonMonsters[randomNumber(commonMonsters.length)];
+          enemy.lvl = randomNumber(lvlDelta,playerLevel);
+          enemy.hp = Math.floor(randomNumber(enemy.hp*hpDelta,enemy.hp/hpDelta));
+          enemy.atk = Math.floor(randomNumber(enemy.atk*atkDelta,enemy.atk*(atkDelta/3)));
+          enemy.def = Math.floor(randomNumber(enemy.def*defDelta,enemy.def*(defDelta/3)));
+          enemy.xpType = 'Common';
+        }
+
 
         return enemy;
       }
