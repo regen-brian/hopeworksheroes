@@ -520,19 +520,10 @@
 	"buffers":
 	[
 		{
-			"file": "public/index2.html",
-			"settings":
-			{
-				"buffer_size": 4077,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 1203,
+				"buffer_size": 1478,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -592,6 +583,7 @@
 	],
 	"file_history":
 	[
+		"/Users/bwalsh/Documents/web projects/hopeworksheroes/public/index2.html",
 		"/Users/bwalsh/Documents/web projects/hopeworksheroes/README.md",
 		"/Users/bwalsh/Desktop/index2.html",
 		"/Users/bwalsh/Documents/web projects/hopeworksheroes/src/scss/_bootstrap-customizations.scss",
@@ -718,12 +710,11 @@
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/subscription-cancel.html",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/app/asset/css/icon-button.css",
 		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen1/css/main.css",
-		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen2/css/main.css",
-		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen2/driverAlertsGen2.html"
+		"/Users/bwalsh/NetBeansProjects/Mobile-App-2018/www/demoGen2/css/main.css"
 	],
 	"find":
 	{
-		"height": 32.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -756,54 +747,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "public/index2.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4077,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1529,
-								1342
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 543.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "README.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1203,
+						"buffer_size": 1478,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								620,
-								620
+								303,
+								303
 							]
 						],
 						"settings":
@@ -822,7 +783,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 32.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -867,7 +828,7 @@
 	"project": "hopeworks-heroes.sublime-project",
 	"replace":
 	{
-		"height": 60.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":
